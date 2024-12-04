@@ -1,0 +1,306 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+html{ /*serve para acessar a toda a tag html*/
+    scroll-behavior: smooth; /*serve para deixar a pesquisa mais fluida, isso, através do nav*/
+}
+
+/*Inicio header*/
+
+.nav{
+    background-color: #181818;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+}
+
+.nav-list{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-right: 28px;
+}
+
+.nav-list a{ /*pegando somente a tag de âncora*/
+    text-decoration: none;
+    color: #ddd;
+    padding: 20px;
+}
+
+.nav-list a:hover{
+    color: #fff;
+}
+
+/*fim header*/
+
+/*Inicio Main*/
+
+.main{
+    width: 100%;
+    background-color: black;
+
+    
+    /*IMPORTANTE*/
+    height: calc(100vh - 80px);
+    background-image: url(images/programador.png);
+    /*FIM IMPORTANTE*/
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10%;
+
+}
+
+.main h1{
+    color:#ffffff;
+    font-size: 54px;
+}
+
+.main p{
+    font-size: 24px;
+    font-style: italic;
+    color: #1e96FC;
+    margin-top: 10px;
+    margin-bottom: 35px;
+}
+
+.call-to-action{
+    cursor: pointer;
+    background-color: #ffffff;
+    border: 8;
+    padding: 14px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.6s; /*Serve para aumentar gradativamente*/
+}
+
+.call-to-action:hover{
+    transform: scale(1.1); /*Aumentar a escala do botão*/
+}
+
+.main a{
+    text-decoration: none;
+    color: #181818;
+}
+
+/*Fim Main*/
+
+/*Início About*/
+.about{
+    background-color: #ffffff;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about div{
+    max-width: 50%;
+    padding-right: 48px;
+}
+
+.about img{
+    max-width: 450px;
+    border-radius: 8px;
+}
+
+.about div h2{
+    font-size: 32px;
+    margin-bottom: 14px;
+}
+/*Fim About*/
+
+/*Início Project*/
+.project{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*padding-top: 80px;*/
+    /*padding-bottom: 80px;*/
+    padding: 80px 0; /*Isso está fazendo o mesmo do que está acima*/
+}
+
+.project h2{
+    font-size: 32px;
+    margin-bottom: 8px;
+    margin-top: 20px;
+}
+
+.project p{
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.project-list{
+    width: 100%;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-list2{
+    width: 100%;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.project img{
+    border-radius: 8px;
+    width: 22%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    opacity: 0.6;
+    transition: 0.6s;
+}
+
+.project img:hover{
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+.action{
+    background-color: #181818;
+    margin: 15px;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-size: 18px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.action:hover{
+    transform: scale(1.1);
+}
+
+/*Fim project*/
+
+/*Início Rodapé*/
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #ffffff;
+    width: 100%;
+    background-color: #181818;
+    padding: 58px 0;
+}
+
+footer a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+footer p{
+    margin-left: 12px;
+}
+
+/*Fim Rodapé*/
+
+/*Responsividade*/
+
+@media (max-width: 1050px){
+
+    /*INICIO NAV*/
+
+    .nav{
+        justify-content: center;
+    }
+
+    .nav a{
+        padding: 40px;
+    }
+
+    /*FIM NAV*/
+
+    /*INICIO MAIN*/
+    .main h1{
+        font-size: 45px;
+    }
+
+    .main p{
+        font-size: 20px;
+
+    }
+
+    .main{
+        background-size: cover; /*serve para ajustar melhor a imagem*/
+    }
+
+    /*FIM MAIN*/
+
+    /*INICIO SOBRE*/
+    .about{
+        flex-direction: column;
+        padding-top: 80px;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+
+    .about div{
+        max-width: 80%;
+
+    }
+
+    .about div h2{
+        font-size: 45px;
+    }
+
+    .about img{
+        width: 80%;
+        margin-top: 60px;
+    }
+    /*FIM SOBRE*/
+
+    /*INICIO PROJETO*/
+    .project img{
+        width: 30%;
+    }
+    /*FIM PROJETO*/
+
+    /*INÍCIO RODAPÉ*/
+    footer{
+        flex-direction: column;
+    }
+
+    footer h3{
+        font-size: 24px;
+        margin-bottom:  8px;
+    }
+
+    footer p{
+        margin: 0;
+    }
+
+    /*FIM DO RODAPÉ*/
+
+}
