@@ -1,306 +1,269 @@
 *{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    outline: 0;
-    box-sizing: border-box;
 }
+
+a{
+    color: #3c96ed;
+    text-decoration: none;
+}
+
+/*
+-- Declarando variáveis dentro do css -- 
+    Tem que fazer a declaração dentro de uma tag maior, ou seja, para que 
+Seja aplicado a todos, nós iremos declarar dentro do body, assim, tudo que estiver
+dentro do body, terá acesso às variáveis.
+*/
 
 body{
-    font-family: 'Roboto', sans-serif;
-}
 
-html{ /*serve para acessar a toda a tag html*/
-    scroll-behavior: smooth; /*serve para deixar a pesquisa mais fluida, isso, através do nav*/
-}
+    /*VARIÁVEIS*/
+    --backgound: #fafafa;
 
-/*Inicio header*/
 
-.nav{
-    background-color: #181818;
-    height: 80px;
+    background-color: #fafafa;
+    height: 100%;
     width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    position: sticky;
-    top: 0;
-    z-index: 9;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 18px;
 }
 
-.nav-list{
+#wrapper{
+    height: 100vh;
+}
+
+#container{
+    margin: 0 auto; /*centralizar o conteúdo*/
+    min-height: 100%;
+    width: 800px;
     display: flex;
     align-items: center;
-    list-style: none;
-    margin-right: 28px;
 }
 
-.nav-list a{ /*pegando somente a tag de âncora*/
-    text-decoration: none;
-    color: #ddd;
-    padding: 20px;
+.column{
+    flex-grow: 1;
+    width: 50%;
 }
 
-.nav-list a:hover{
-    color: #fff;
+.left{
+    background-image: url(./assets/main-foto.png);
+    background-size: 450px;
+    background-repeat: no-repeat; /*para a imagem não se repitir*/
+    background-position: center;
+    height: 600px;
 }
 
-/*fim header*/
+.rigth{
+    padding-left: 20px;
+}
 
-/*Inicio Main*/
+.login-panel{
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    text-align: center;
+    padding: 20px 0;
+}
 
-.main{
-    width: 100%;
-    background-color: black;
+.logo-img{
+    width: 175px;
+}
 
-    
-    /*IMPORTANTE*/
-    height: calc(100vh - 80px);
-    background-image: url(images/programador.png);
-    /*FIM IMPORTANTE*/
-    
+form{
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding: 10%;
 
 }
 
-.main h1{
-    color:#ffffff;
-    font-size: 54px;
-}
-
-.main p{
-    font-size: 24px;
-    font-style: italic;
-    color: #1e96FC;
+input[type="password"], input[type="text"]{
+    background-color: #ffffff;
+    border: 1px solid rgb(236, 234, 234);
+    height: 40px;
+    border-radius: 4px;
     margin-top: 10px;
-    margin-bottom: 35px;
+    padding: 10px;
+    font-size: 13px;
+    width: 320px;
+    color: #000000;
 }
 
-.call-to-action{
-    cursor: pointer;
-    background-color: #ffffff;
-    border: 8;
-    padding: 14px;
+input[type="password"]::placeholder, input[type="text"]::placeholder{
+    color: rgb(165, 164, 164);
+}
+
+input[type="password"]:focus, input[type="text"]:focus{
+    outline: 0;
+    border: 1px solid #a1a1a1
+}
+
+input[type="submit"]{
+    width: 320px;
+    margin-top: 10px;
+    height: 30px;
+    border: 0;
+    background-color: #3c96ed;
     border-radius: 4px;
-    font-size: 18px;
-    font-weight: bold;
-    transition: 0.6s; /*Serve para aumentar gradativamente*/
-}
-
-.call-to-action:hover{
-    transform: scale(1.1); /*Aumentar a escala do botão*/
-}
-
-.main a{
-    text-decoration: none;
-    color: #181818;
-}
-
-/*Fim Main*/
-
-/*Início About*/
-.about{
-    background-color: #ffffff;
-    width: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 80px;
-    padding-bottom: 80px;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.about div{
-    max-width: 50%;
-    padding-right: 48px;
-}
-
-.about img{
-    max-width: 450px;
-    border-radius: 8px;
-}
-
-.about div h2{
-    font-size: 32px;
-    margin-bottom: 14px;
-}
-/*Fim About*/
-
-/*Início Project*/
-.project{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /*padding-top: 80px;*/
-    /*padding-bottom: 80px;*/
-    padding: 80px 0; /*Isso está fazendo o mesmo do que está acima*/
-}
-
-.project h2{
-    font-size: 32px;
-    margin-bottom: 8px;
-    margin-top: 20px;
-}
-
-.project p{
-    margin-bottom: 40px;
-    font-style: italic;
-}
-
-.project-list{
-    width: 100%;
-    margin-bottom: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.project-list2{
-    width: 100%;
-    margin-bottom: 8px;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
-}
-
-.project img{
-    border-radius: 8px;
-    width: 22%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
-    opacity: 0.6;
-    transition: 0.6s;
-}
-
-.project img:hover{
-    opacity: 1;
-    transform: scale(1.03);
-}
-
-.action{
-    background-color: #181818;
-    margin: 15px;
-    border: none;
-    padding: 12px 28px;
-    border-radius: 4px;
-    font-size: 18px;
     color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 10px;
     cursor: pointer;
-    transition: 0.6s;
 }
 
-.action:hover{
-    transform: scale(1.1);
+.infobox{
+    background-color: #fff;
+    height: 68px;
+    border: 1px solid rgb(236, 234, 234);
+    margin: 18px auto 0; /*18px - na parte de cima(top)/ auto - são as laterais, direita e esqueda/ 0 - parte de baixo(botton)*/
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/*Fim project*/
+.infobox p{
+    user-select: none;
+}
 
-/*Início Rodapé*/
+.infobox p a{
+    font-weight: bold;
+    user-select: none;
+}
+
+.get-app-panel{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.app-buttons{
+
+    margin-top: 16px;
+}
+
+.app-buttons img{
+    height: 40px;
+    padding: 0 2px;
+}
 
 footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    color: #ffffff;
-    width: 100%;
-    background-color: #181818;
-    padding: 58px 0;
+    text-align: center;
+    height: 50px;
+    margin-top: -50px;
 }
 
 footer a{
-    text-decoration: none;
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.text-small{
+    font-size: 12px;
+    font-weight: bold;
+    color: gray;
+    text-transform: uppercase;
+    padding-left: 20px;
+    display: inline-block; /*Colocando todos na mesma linha do pai*/
+}
+
+
+/*Página signup*/
+#container-signup{
+    margin: 0 auto; /*centralizar o conteúdo*/
+    min-height: 100%;
+    width: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.message{
+    margin: 10px 70px;
+}
+
+.message span{
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #8e8e8e;
+
+}
+
+.cta-button{
+    width: 320px;
+    margin: 10px 0;
+    height: 35px;
+    background-color: #0095f6;
     color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-footer p{
-    margin-left: 12px;
+.divisor-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
 }
 
-/*Fim Rodapé*/
+.line{
+    height: 1px;
+    background-color: #e6e6e6;
+    width: 35%;
+}
+
+.divisor-tag{
+    font-weight: bold;
+    margin: 0 2.5%;
+    color: #8e8e8e;
+    user-select: none;
+}
+/*Fim Página signup*/
+
 
 /*Responsividade*/
 
-@media (max-width: 1050px){
-
-    /*INICIO NAV*/
-
-    .nav{
-        justify-content: center;
+@media (max-width: 850px){
+    .left{
+        display: none;
     }
 
-    .nav a{
-        padding: 40px;
+    #container{
+        width: 78%;
     }
 
-    /*FIM NAV*/
-
-    /*INICIO MAIN*/
-    .main h1{
-        font-size: 45px;
-    }
-
-    .main p{
-        font-size: 20px;
-
-    }
-
-    .main{
-        background-size: cover; /*serve para ajustar melhor a imagem*/
-    }
-
-    /*FIM MAIN*/
-
-    /*INICIO SOBRE*/
-    .about{
-        flex-direction: column;
-        padding-top: 80px;
+    .rigth{
         padding-left: 0;
-        padding-right: 0;
-        padding-bottom: 0;
     }
 
-    .about div{
-        max-width: 80%;
+}
 
+@media (max-width: 560px){
+    #container{
+        width: 98%;
     }
 
-    .about div h2{
-        font-size: 45px;
+    #container-signup{
+        width: 98%;
     }
 
-    .about img{
-        width: 80%;
-        margin-top: 60px;
-    }
-    /*FIM SOBRE*/
-
-    /*INICIO PROJETO*/
-    .project img{
-        width: 30%;
-    }
-    /*FIM PROJETO*/
-
-    /*INÍCIO RODAPÉ*/
-    footer{
-        flex-direction: column;
+    input[type="password"], input[type="text"], input[type="submit"]{
+        width: 85%;
     }
 
-    footer h3{
-        font-size: 24px;
-        margin-bottom:  8px;
+    .cta-button{
+        width: 85%;
     }
 
-    footer p{
-        margin: 0;
+    .message{
+        margin: 10px 25px;
     }
-
-    /*FIM DO RODAPÉ*/
-
 }
