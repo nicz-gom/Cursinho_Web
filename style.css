@@ -1,115 +1,239 @@
 *{
-    border: 0;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Maven pro', sans-serif;
+
+    box-sizing: border-box;
 }
 
 body{
-    --feed-bar: #222222;
-    --backgourd: #d4d4d4;
-    --white: #ffffff;
-    --black: #000000;
-    --border: #adadad;
+    /*Paleta de Cores*/
+    --color1: #D2E9FF;
+    --color2: #000000;
+    --color3: #0661b0;
+    --color4: gray;
+    --color5: #ffffff;
+    --color6: #b8cfe4;
+    --color7: #008afb;
+
+    height: 100vh;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+
+    height: calc(100vh - 62px);
+}
+
+/*Parte superior do site*/
+
+.top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: 100%;
+    border-bottom: 2px solid var(--color3);
+}
+
+.acess{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 100%;
+    height: 60px;
+
+    background-color: var(--color1);
+}
+
+.acess a{
+    text-decoration: none;
+    color: var(--color3);
+
+    font-weight: 500;
+
+    transition: 0.9s;
+}
+
+.logo{
+    max-width: 60px;
+    width: 100%;
 
 }
 
-.container-all{
+/*Fim da parte superior*/
+
+
+/*Parte da Direita*/
+.left{
+    flex: 1;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-
-    background-color: var(--backgourd);
 }
 
-.main p{
-    font-weight: bold;
-    border-bottom: 1px solid var(--border);
+.left h1{
+    font-size: 30px;
+    text-align: center;
+
+    margin-bottom: 5%;
 }
 
-.container-all .main .-post-container{
-    margin-bottom: 35px;
-}
-
-.header{
-    width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 9;
-}
-
-.feed-bar{
-    background-color: var(--feed-bar);
-    color: var(--white);
-
-    height: 60px;
-    width: 100%;
-
+form{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    height: 100%;
 }
 
-.feed-bar h2{
-    font-size: 20px;
-    font-weight: 200;
+input, button {
+    height: 32px;
+    width: 60%;
+    margin-bottom: 15px;
+    border: 1px solid var(--color4);
+    border-radius: 5px;
+
+    transition: 0.9s;
 }
 
-.user{
+input::placeholder{
+    padding-left: 10px;
+}
+
+.terms{
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: start;
+
+    width: 60%;
 }
 
+.terms p{
+    margin-left: 10px;
+}
 
-.img-user{
-    width: 45px;
-    height: 45px;
-    border-radius: 35px;
-    margin: 10px 0px;
-    margin-right: 5px;
+input[type="checkbox"]{
+    width: 20px;
+    margin: 0;
+}
 
-    border:2px solid var(--border);
+button{
+    border: none;
+    background-color: var(--color3);
+    color: var(--color5);
 
-    transition: 0.6s;
+    transition: background-color 0.6s linear; 
+    transition: 0.9s;
     cursor: pointer;
 }
 
-.img-user:hover{
-    transform: scale(1.02);
+button:hover{
+    transform: scale(1.06);
+    background-color: var(--color7);
 }
 
-.post .posts{
-    max-height: 550px;
-    width: 100%;
-    border-radius: 15px;
-    border: 2px solid var(--border);
-    padding: 3px;
+.register{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
-    transition: 0.6s;
+    margin-top: 10px;
 }
 
-.post .posts:hover{
-    transform: scale(1.01);
-    border: 2.9px solid var(--border);
+.register p{
+    font-weight: bold;
 }
 
-.functions .icons{
-    height: 30px;
-    margin: 0px 10px;
-
-    cursor: pointer;
-
-    transition: 0.5s;
-}
-
-.functions .icons:hover{
-    transform: scale(1.05);
+.register a{
+    text-decoration: none;
+    color: var(--color4);
+    margin-left: 5px;
 }
 
 
+/*Fim da Parte da Direita*/
+
+
+/*Parte da Esquerda*/
+.rigth{
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+    background-color: var(--color6);
+}
+
+.rigth .office{
+    border-radius: 10px;
+    border: 2px solid var(--color3);
+
+    max-width: 600px;
+    width: 80%;
+}
+
+.rigth h1{
+    text-align: center;
+    font-size: 30px;
+    color: var(--color3);
+}
+
+.rigth p{
+    margin: 10px;
+    color: var(--color5);
+
+    font-weight: 500;
+}
+
+
+/*Fim da Parte da Esquerda*/
+
+@media(max-width: 800px){
+    input[type="text"], input[type="gmail"], input[type="password"]{
+        width: 80%;
+    }
+
+    button{
+        width: 80%;
+    }
+
+    .terms{
+        width: 80%;
+    }
+}
+
+@media(max-width: 600px){
+    .container{
+        display: flex;
+        flex-direction: column ;
+
+        height: 100%;
+    }
+
+    .office{
+        margin-top: 20px;
+    }
+
+}
+
+@media(max-width: 480px) {
+    .acess a{
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 370px){
+    .logo{
+        width: 0;
+    }
+}
